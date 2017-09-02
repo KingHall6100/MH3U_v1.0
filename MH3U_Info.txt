@@ -1,0 +1,766 @@
+
+###############################################################################################
+
+MH3U Trainer: There are just two tabs Replicate & Weapon
+=====================================================================================
+Replicate Tab:
+Capture button: 
+	In Village/Port: read player pouch and food skill.
+	Outside Village/Quest: read player pouch, food skill, and player stats (health, stamina, etc.)
+Write button:
+ 	In Village/Port: write modified data back to player pouch and food skill.
+	Outside Village/Quest: write modified data back to player pouch, food skill, player stats (health, stamina, etc.), and active all the checkbox features.
+Run button (replicator): 
+	In Village/Port: Feature doesn't work in village/port.
+	Outside Village/Quest: Button start by doing a capture, then write modified data back every x seconds, depending on what the time interval is set at.  You could modify the trainer data anytime while the replicator is running.  It'll just update the player data on the next time interval.  Replicator will give infinite of everything. 
+Tips/Hints:
+	Replicating Items: In game, go stand next to your chest. Put items you want to duplicate in your pouch. Hit capture button, then modified item amount, hit write button.  In game, now store item back to chest.
+	Getting New Items: In game, go stand next to your chest. Empty your pouch, hit capture button.  Now look at the “Item IDs” list, determine what items you want, put the Item ID and amount you want in the trainer, hit write button. In game, now store item to chest.
+	
+	Money,Resource: Just give yourself x amount of Azure Drgnshpire (worth 32,000 each) or Dire Dragongem (worth 31,000 each), then sell it. Give yourself Lava Nuggest (1500 each), then trade it for resources points.
+	Food skills: You could give yourself food skills in or outside village at any time.  Look at the list of “Food skill ID” to determine what you want.
+	Time Interval: You shouldn't set the update time interval to be less than 3 seconds. 5 seconds is the default and should work fine. The larger the time interval, the more stable the game & replicator becomes.
+	Health: The max health is 9999, but you don't need it that high.  With the replicator, if you set it to 5 seconds and your health at 300, there is no way ANY monster could take 300 health from you within 5 seconds. Especially if your defense is over 3000, which I'll explain later in the Weapons tab section.
+	Weapon/Armor/Decoration: In game, empty your pouch, go to the blacksmith. Talk to him to find out what items you need to make that piece of weapon/armor/talisman.  Then hit capture button, now look at the “Item ID” list and determine what you need.  Set the amount you need, then hit the write button.  You should have all the item you need in your pouch.  Talk to the blacksmith again and buy that weapon/armor/decoration.  **Note: If you don’t see a piece of weapon/armor in the blacksmith’s list. It means you don’t have the first item that’s required for that piece of weapon/armor.  If that’s the case, then use Ping’s Dex to determine what you need and populate your pouch accordingly. 
+	*** Warning *** Outside village/Quest: NEVER give yourself more than the default amount of items in your pouch. E.g. game will only allow 5 mega dash, hence NEVER give yourself more than 5.  The game does real time calculation of how much item you have left.  If the amount is greater then what it expects, the games just set the item amount to zero.  If you use the replicator, you shouldn't need to set the amount higher than the default because the replicator will replenish the items every x seconds.  
+	***### Critical Warning ###*** Shut off replicator when the quest ends or returning to the village.  The game has a 50% chance of crashing if the replicator is on when the quest ends, because the replicator is accessing a memory region the game is trying to erase.
+=====================================================================================
+Weapon Tabs: 
+	Read button: In game, find out the page, row (horizontal), and column (vertical) number the item you want to read.  Then in the trainer set the page #, Row #, and Col #, hit the read button.  Each weapon/armor/talisman have 4 32-bit data associate with it, which the trainer label as data 1, data 2, data 3, and data 4.  Look at “Weapon Instructions” for detail to each data set.
+	Write button: The last read, will populate the write fields.  This is where you would modified each of the data.  Don’t forget to change the page, row, or col if you don’t want to overwrite the exist weapon/armor/talisman.
+
+Tips/Hints:
+	Weapon Instructions: Very important you read “Weapon Instructions” section carefully and make sure you understand it before doing any modification.  Read more than ones if you have too.
+Decorations/Jewels: Each weapon, armor, and talisman have 3 spaces for jewel decorations, not slots.  The concept of slots is an in-game restriction.  You could populate any decoration in an armor piece, even if that armor piece doesn’t have any slots.  
+Also, the slot requirement of a decoration doesn’t matter.  Since each piece of armor/weapon/talisman have 3 spaces, you could populate up to 3 Attack Jewel 3 (attack +5), giving you up to 15 points in attack on a single piece of armor.  
+In total, there are 21 spaces (1 weapon, 5 armors, and 1 talisman).  Use the spaces wisely, such as only populate decoration with +3 or greater skill points.  Look in Ping’s Dex, under decorations to determine which skill set have the highest jewel points. E.g. Attack and Expert is cheap because both skill have a +5 jewel, while Evade Dist is very expensive because it only has a +1 jewel.  Hence if you want Evade Dist, then get it from an armor piece, such as Nargacuge Greaves X, which gives you +3 Evade Dist.
+Talisman give you 2 instant skill, hence use this only for skills that have no jewel decorations, such as Status Res, Edgemaster, Steadyhands, etc.. Or you could use if for expensive skills such as Awaken or Evade Dist.
+With the right mix of armors and decorations, you could have over 10 skill sets plus 3 food skills.
+
+	Defense: Defense doesn’t really matter because you have the replicator and 9999 max health, but if you still want over 3000 in defense, then upgrade your armor level.  You could upgrade any armor piece to level 256 (which is level 0) and your defense per armor will be 500 or over.  The advantage of this leveling is that it’s permanent if you save it.  Your armor defense stays even if you don’t use the trainer the next time you play.
+***### Critical Warning ###*** Game will crash if you modified armor/weapon/charm while it's equip. Make sure you unequip it before doing anything.  Hence, you should only do modification next to your chest and unequip everything, to be save.  ***Note: save your naked self as one of the equipment set. Then just equip that set when modifying armor/weapon/charm next time.  That way, you don’t forget anything.  It’s the safest way.
+=====================================================================================
+Strategy: 
+Here is the recommended mix armor/weapon/talisman:
+	Armors: Duramboros Cap X, Rath Soul Vest, Brachy Guards X, Barroth Legging Z, Rath Soul Coat Z
+	Decorations: 2x (Hearing +4), 3x (Expert +5), 4x (Attack +5), 3x (Potential +3), 3x (Spirit +4), 2x (Survivor +3), 2x (Focus +4)
+	Weapon: any kind
+	Talisman: Blademaster (Status Res: Awaken or Elemental), Gunner (Status Res: Steady Hands)
+The setup should give you:
+	Blademaster: Attack (L), Critical Eye +3 (Expert), Adrenaline +2 (Potential), Fortify (Survivor), Challenger +2 (Spirit), Focus (Fast charge), HG Earplugs, Status Res, Awaken or Elemental
+	Gunner: Attack (L), Critical Eye +3 (Expert), Adrenaline +2 (Potential), Fortify (Survivor), Challenger +2 (Spirit), Focus (Fast charge), HG Earplugs, Status Res, Steady Hands
+Food skill: eat specialist for status, pyro and bombardier for slime.
+
+In Game play: take advantage of Survivor and Potential.  Get yourself carted twice, so survivor kicks in, then set your health to be 3000/9999.  This will kick in Potential. Turn on the replicator.  With all the checkbox features, your attack now should be 5x of your base weapon attack. E.g. if your weapon has an attack of 300, now it’ll be close to 1500.  Imagine a dual blade 1500 damage.  Gunner will get 6x base attack because of the bullets/coatings.  Remember, the player status will not show 1500 because purple sharpness, critical eye, charge meter, etc. are hidden attack buffs, but they are there during in-game calculation.
+
+========================================================================================
+########################################################################################
+========================================================================================
+Weapon Instructions:
+
+========================================================================================
+*** Warning *** Game will crash if you modified armor/weapon/charm while it's equip.
+Make sure you unequip it before doing anything.
+-------------------------------------------------
+
+Talisman:
+Data1 == (aabbcccc)
+aa = Talisman Type (From "Equipment ID" list, since this is a talisman aa = 06)
+bb = Number of slots on the talisman (max = 03). Don't have higher then 03.
+cccc = Talisman Level 0001-000A (levels 1 - 10). 0001 = pawn talisman, 000A = creator talisman
+
+Data2 == (aabbccdd)
+aa = Talisman Skill Ability #1 (From "Talisman Skill ID" list, such as 6D = potential)
+bb = Skill Points for Talisman Skill Ability #1. Such as hex 0A = 10 skill points for potential.
+cc = Talisman Skill Ability #2 (From "Talisman Skill ID" list, such as 12 = Expert)
+dd = Skill Points for Talisman Skill Ability #2. Such as hex 14 = 20 skill points for Expert.
+
+Data3 == (aabbccdd)
+aa = 00, not sure what it does
+bb = From "Jewel ID" list, such as 3E = hearing +4
+cc = 00, not sure what it does
+dd = From "Jewel ID" list, such as 3E = hearing +4
+
+Data4 == (aabbcccc)
+aa = 00, not sure what it does
+bb = From "Jewel ID" list, such as 38 = attack +5 
+cccc = 0000, not sure what it does
+ 
+=======================================================================================
+*** Warning *** Game will crash if you modified armor/weapon/charm while it's equip.
+
+Armor:
+Data1 == (aabbcccc)
+aa = Armor Type (From "Equipment ID" list, such as head, chest, pants, hands, waist)
+bb = Armor defense level 1-255 (01-FF)
+cccc = Different Types of Armor (From "Armor ID" list, such as Uragaan Cap (002F), Uragaan Helm (002E), etc.)
+
+Data2 == Not sure. Leave alone.
+
+Data3 == (aabbccdd)
+aa = 00, not sure what it does
+bb = From "Jewel ID" list, such as 3E = hearing +4
+cc = 00, not sure what it does
+dd = From "Jewel ID" list, such as 3E = hearing +4
+
+Data4 == (aabbcccc)
+aa = 00, not sure what it does
+bb = From "Jewel ID" list, such as 38 = attack +5 
+cccc = 0000, not sure what it does
+
+========================================================================================
+*** Warning *** Game will crash if you modified armor/weapon/charm while it's equip.
+
+Weapon:
+Data1 == (aabbcccc)
+aa = Weapon Type (From "Equipment ID" list, such as Great Sword, Hammer, Bow, Lance, etc.)
+bb = Number of slots you want in the weapon, should always be 0x03.
+cccc = Different Types of Weapon, (From "Weapon ID" list, such as Eclipse Slicer (003E), Alkaid's Asterism (003F), etc.)
+
+Data2 == Not sure. Leave alone
+
+Data3 == (aabbccdd)
+aa = 00, not sure what it does
+bb = From "Jewel ID" list, such as 3E = hearing +4
+cc = 00, not sure what it does
+dd = From "Jewel ID" list, such as 3E = hearing +4
+
+Data4 == (aabbcccc)
+aa = 00, not sure what it does
+bb = From "Jewel ID" list, such as 38 = attack +5 
+cccc = 0000, not sure what it does  
+
+========================================================================================
+########################################################################################
+========================================================================================
+Item ID's:
+
+0001 = (None)			01FF = R.Ludroth Shard		03FD = EZ Barel Bomb L
+0002 = Book of Combo 1		0200 = R.Ludroth Claw		03FE = Ballista Ammo
+0003 = Book of Combo 2		0201 = R.Ludroth Claw+		03FF = Ballista Binder
+0004 = Book of Combo 3		0202 = R.Ludroth Talon		0400 = DUMMY 117
+0005 = Book of Combo 4		0203 = R.Ludroth Crest		0401 = Cannon Ammo
+0006 = Book of Combo 4		0204 = R.Ludroth Crest+		0402 = Anti-Dragon Bomb
+0007 = Organizer Guide		0205 = Chic Crest		0403 = Torch
+0008 = Pack Rat Guide		0206 = R.Ludroth Tail		0404 = Paw Pass Ticket
+0009 = Potion			0207 = Plum Spongy Hide		0405 = Royal Honey
+000A = Mega Potion		0208 = Plum Spongy Piel		0406 = Unique Mushroom
+000B = Nutrients		0209 = P.Ludroth Scale+		0407 = Choice Mushroom
+000C = Mega Nutrients		020A = P.Ludroth Shard		0408 = Ripened Mushroom
+000D = Antidote			020B = P.Ludroth Claw+		0409 = Great Shroom
+000E = Immunizer		020C = P.Ludroth Talon		040A = Super Sprout
+000F = Dash Juice		020D = Barroth Shell		040B = DUMMY 118
+0010 = Mega Dash Juice		020E = Barroth Carapace		040C = DUMMY 119
+0011 = Demondrug		020F = Barroth Cortex		040D = Sliverfish
+0012 = Mega Demondrug		0210 = Barroth Ridge		040E = DUMMY 120
+0013 = Might Pill		0211 = Barroth Ridge+		040F = DUMMY 121
+0014 = Armorskin		0212 = Barroth Chine		0410 = Goldenfish
+0015 = Mega Armorskin		0213 = Barroth Claw		0411 = Royal Rhino
+0016 = Adamant Pill		0214 = Barroth Claw+		0412 = Divine Rhino
+0017 = Cool Drink		0215 = Barroth Talon		0413 = Sliver Cricket
+0018 = Hot Drink		0216 = Barroth Scalp		0414 = Gold Cricket
+0019 = Cleanser			0217 = Barroth Crown		0415 = Auristone Piece
+001A = Psychoserum		0218 = Barroth Tail		0416 = Auristone Chunk
+001B = Herbal Medicine		0219 = J.Barr Carapace		0417 = Balmstone Piece
+001C = Max Potion		021A = J.Barroth Cortex		0418 = Balmstone Chunk
+001D = Ancient Potion		021B = J.Barroth Ridge+		0419 = Crystal Bone
+001E = Catalyst			021C = J.Barroth Chine		041A = Golden Bone
+001F = Energy Drink		021D = J.Barroth Claw+		041B = Bloodstone
+0020 = Air Philter		021E = J.Barroth Talon		041C = Deep Bloodstone
+0021 = Mega Air Philter		021F = J.Barroth Scalp		041D = Coal
+0022 = Gunpowder		0220 = J.Barroth Crown		041E = Volatile Coal
+0023 = Lifecrystals		0221 = J.Barroth Tail		041F = Wyvern Egg
+0024 = Lifepowder		0222 = J.Barroth Lash		0420 = Herbivore Egg
+0025 = Mystery Charm		0223 = Frozen Glob		0421 = Gargwa Egg
+0026 = Shining Carm		0224 = DUMMY 49			0422 = Gold Gargwa Egg
+0027 = Timeworn Charm		0225 = Gobul Hide		0423 = DUMMY 206
+0028 = Enduring Charm		0226 = Hobul Hide+		0424 = Powderstone
+0029 = Powercharm		0227 = Gobul Piel		0425 = Gargwa Guano
+002A = Powertalon		0228 = Gobul Fin		0426 = White Liver
+002B = Armorcharm		0229 = Gobul Fin+		0427 = Slagtoth Oil
+002C = Armortalon		022A = Fine Gobul Fin		0428 = Popo Tongue
+002D = Tranquilizer		022B = Gobul Spike		0429 = Secret Stash
+002E = Raw Meat			022C = Gobul Skike+		042A = Round Acorn
+002F = Poisoned Meat		022D = Gobul Surspike		042B = Fine Stomach
+0030 = Tinger Meat		022E = Gobul Whisker		042C = Luminous Stomach
+0031 = Drugged Meat		022F = Gobul Kingwhisker	042D = Giggi Extract
+0032 = Rare Steak		0230 = Gobul Latern		042E = Monster Guts
+0033 = Well-done Steak		0231 = Gobul Latern+		042F = Red Coral Stone
+0034 = Burnt Meat		0232 = Gobul Beacon		0430 = Wyvern Tear
+0035 = Hot Meat			0233 = Rathian Scale		0431 = Lrg Wyvern Taer
+0036 = Chilled Meat		0234 = Rathian Scale+		0432 = Beast Tear
+0037 = Pink Liver		0235 = Rathian Shard		0433 = Lrg Beast Tear
+0038 = Ethnic Wyvrnmeat		0236 = Rathian Shell		0434 = Bird Coin
+0039 = Boomerang		0237 = Rathian Carapace		0435 = DUMMY 122
+003A = Throwing Knife		0238 = Rathian Cortex		0436 = DUMMY 123
+003B = Poison Knife		0239 = Rathian Webbing		0437 = DUMMY 124
+003C = Sleep Knife		023A = Rathian Spike		0438 = DUMMY 125
+003D = Paralysis Knife		023B = Rathian Spike+		0439 = DUMMY 126
+003E = Tranq Knife		023C = Rathian Surspike		043A = DUMMY 127
+003F = Bomb Casing		023D = Rathian Plate		043B = Leviathan Coin
+0040 = Paintball		023E = Rathian Mantel		043C = DUMMY 128
+0041 = Flash Bomb		023F = Rahtian Ruby		043D = DUMMY 129
+0042 = Sonic Bomb		0240 = DUMMY 50			043E = DUMMY 130
+0043 = Dung			0241 = P.Rathian Scale+		043F = DUMMY 131
+0044 = Super-sized Dung		0242 = P.Rathian Shard		0440 = DUMMY 214
+0045 = Fertile Mud		0243 = P.Rath Carapace		0441 = Pinnacle Coin
+0046 = Dung Bomb		0244 = P.Rathian Cortex		0442 = Hunter King Coin
+0047 = Smoke Bomb		0245 = G.Rathian Shard		0443 = Voucher
+0048 = Poison Smoke Bmb		0246 = G.Rathian Cortex		0444 = Gourmet Voucher
+0049 = Farcaster		0247 = G.Rahtian Surspike	0445 = Sharq Ticket
+004A = Tranq Bomb		0248 = Rathalos Scale		0446 = DUMMY 132
+004B = Oxygen Supply		0249 = Rathalos Scale+		0447 = DUMMY 133
+004C = Spider Web		024A = Rathalos Shard		0448 = Thunderclap Diploma
+004D = Net			024B = Rathalos Shell		0449 = DUMMY
+004E = Trap Tool		024C = Rathalos Carapace	044A = DUMMY
+004F = Pitfall Trap		024D = Rathalos Cortex		044B = DUMMY 134
+0050 = Shock Trap		024E = Rathalos Webbing		044C = Shadowed Edge
+0051 = Small Barrel		024F = Rahtalos Fellwing	044D = Medal Voucher L
+0052 = Large Barrel		0250 = Rathalos Tail		044E = Lion's Claw
+0053 = Barrel Bomb S		0251 = Rathalos Lash		044F = Conqeror's Seal
+0054 = Barrel Bomb S+		0252 = Rahtalos Plate		0450 = DUMMY 135
+0055 = Barrel Bomb L		0253 = Rathalos Mantel		0451 = Commendation
+0056 = Barrel Bomb L+		0254 = Rathalos Ruby		0452 = DUMMY 146
+0057 = Bounce Bomb		0255 = Rathalos Talon		0453 = Pawprint Stamp
+0058 = Bounce Bomb+		0256 = Rath Ripper		0454 = Aquaglow Jewel
+0059 = Felvine Bomb		0257 = Rath Marrow		0455 = Sunspire Jewel
+005A = Huskberry		0258 = Rath Medulla		0456 = Bloodrun Jewel
+005B = Bone Husk S		0259 = Rath Gleem		0457 = Lazurite Jewel
+005C = Bone Husk L		025A = A.Rath Scale+		0458 = Paralysis Jwl 1
+005D = Normal S Lv1		025B = A.Rath Shard		0459 = Paralysis Jwl 2
+005E = Normal S Lv2		025C = A.Rath Carapace		045A = Pep Jewel 1
+005F = Normal S Lv3		025D = A.Rath Cortex		045B = Pep Jewel 2
+0060 = Pierce S Lv1		025E = A.Rathalos Tail		045C = Steadfast Jwl 1
+0061 = Pierce S Lv2		025F = A.Rathalos Lash		045D = Standfast Jwl 1
+0062 = Pierce S Lv3		0260 = A.Rathalos Wing		045E = Antidote Jewel 1
+0063 = Pellet S Lv1		0261 = S.Rathalos Shard		045F = Antidote Jewel 2
+0064 = Pellet S Lv2		0262 = S.Rath Cortex		0460 = Tracker Jewel 1
+0065 = Pellet S Lv3		0263 = S.Rathalos Lash		0461 = Trekker Jewel 1
+0066 = Crag S Lv1		0264 = DUMMY 215		0462 = Ninja Jewel 1
+0067 = Crag S Lv2		0265 = DUMMY 51			0463 = Vitality Jewel 1
+0068 = Crag S Lv3		0266 = DUMMY 52			0464 = Recovery Jewel 1
+0069 = Clust S Lv1		0267 = Gigginox Hide		0465 = Recovery Jewel 2
+006A = Clust S Lv2		0268 = Gigginox Hide+		0466 = Razor Jewel 1
+006B = Clust S Lv3		0269 = Gigginox Piel		0467 = Razor Jewel 3
+006C = Flaming S		026A = Uncanny Hide		0468 = Handicraft Jwl 2
+006D = Water S			026B = Uncanny Hide+		0469 = Handicraft Jwl 3
+006E = Thunder S		026C = Gigginox Claw		046A = Fencer Jewel 1
+006F = Freeze S			026D = Gigginox Claw+		046B = Fencer Jewel 3
+0070 = Dragon S			026E = Gigginox Talon		046C = Expert Jewel 1
+0071 = Recov S Lv1		026F = DUMMY 53			046D = Expert Jewel 2
+0072 = Recov S Lv2		0270 = DUMMY 54			046E = Expert Jewel 3
+0073 = Poison S Lv1		0271 = Fearsome Maw		046F = Grinder Jewel 1
+0074 = Poison S Lv2		0272 = Venom Gland		0470 = Ironwall Jewel 1
+0075 = Para S Lv1		0273 = Grim Venom Gland		0471 = Ironwall Jewel 2
+0076 = Para S Lv2		0274 = Foul Venom Gland		0472 = Shield Jewel 1
+0077 = Sleep S Lv1		0275 = B.Giggi Hide+		0473 = Shield Jewel 2
+0078 = Sleep S Lv2		0276 = B.Giggi Piel		0474 = Quickload Jwl 1
+0079 = Tranq S			0277 = B.Giggi Claw+		0475 = Quickload Jwl 2
+007A = Paint S			0278 = B.Giggi Talon		0476 = Absorber Jewel 1
+007B = Demon S			0279 = Lagiacrus Scale		0477 = Absoerber Jewel 3
+007C = DUMMY 1			027A = Lagiacrus Scale+		0478 = Forceshot Jwl 1
+007D = Armor S			027B = Lagiacrus Shard		0479 = Forceshot Jwl 3
+007E = DUMMY 2			027C = Shell Shocker		047A = Pierce Jewel 1
+007F = Sub S Lv1		027D = Shell Shocker+		047B = Pierce Jewel 3
+0080 = Sub S Lv2		027E = Deathly Shocker		047C = Pellet Jewel 1
+0081 = Exhaust S Lv1		027F = Lagiacrus Hide		047D = Pellet Jewel 3
+0082 = Exhaust S Lv2		0280 = Lagiacrus Hide+		047E = ShotPlus Jewel 1
+0083 = Slicing S		0281 = Lagiacrus Claw		047F = ShotPlus Jewel 2
+0084 = DUMMY 3			0282 = Lagiacrus Claw+		0480 = PiercePluss Jwl 1
+0085 = DUMMY 4			0283 = Lagiacrus Talon		0481 = DUMMY 137
+0086 = WyvernFire		0284 = Lagiacrus Tail		0482 = PelletPlus Jwl 1
+0087 = UW Ballista Ammo		0285 = Lagiacrus Flail		0483 = CragPlus Jewel 1
+0088 = (No Coating)		0286 = Lagiacrus Horn		0484 = ClustPlus Jwl 1
+0089 = Empty Phial		0287 = Lagiacrus Horn+		0485 = Disabler Jewel 1
+008A = Power Coating		0288 = Lagia Sapphire		0486 = Disabler Jewel 2
+008B = C.Range Coating		0289 = Lagiacrus Mantel		0487 = Element Jewel 1
+008C = Poison Coating		028A = Lagiacrus Plate		0488 = Element Jewel 3
+008D = Para Coating		028B = I.Lagi Scale+		0489 = Bombardier Jwl 1
+008E = Sleep Coating		028C = I.Lagi Shard		048A = DUMMY 138
+008F = Exhaust Coating		028D = I.Lagi Shocker+		048B = Hungerless Jwl 1
+0090 = Paint Coating		028E = I.Lagi D-Shocker		048C = Metabolism Jwl 1
+0091 = DUMMY 5			028F = I.Lagi Hide+		048D = Attack Jewel 1
+0092 = Worm			0290 = I.Lagi Piel		048E = Attack Jewel 2
+0093 = DUMMY 6			0291 = DUMMY 55			048F = Attack Jewel 3
+0094 = Mega Fishing Fly		0292 = DUMMY 56			0490 = Defense Jewel 1
+0095 = Frog			0293 = DUMMY 57			0491 = Defense Jewel 2
+0096 = Whetfish Bait		0294 = DUMMY 58			0492 = Protection Jwl 1
+0097 = Sushifish Bait		0295 = I.Lagi Horn+		0493 = Asylum 1
+0098 = Tuna Bait		0296 = I.Lagi Hardhorn		0494 = Earplug Jewel 1
+0099 = DUMMY 7			0297 = DUMMY 59			0495 = Earplug Jewel 3
+009A = Goldenfish Bait		0298 = DUMMY 60			0496 = Alarm Jewel 1
+009B = Burst Bait		0299 = DUMMY 61			0497 = Friendship Jwl 1
+009C = DUMMY 8			029A = A.Lagi Shard		0498 = Friendship Jwl 2
+009D = Old Pickaxe		029B = A.Lagi D-Shocker		0499 = Transportr Jwl 1
+009E = Iron Pickaxe		029C = A.Lagi Piel		049A = Fire Res Jewel 1
+009F = Mega Pickaxe		029D = DUMMY 62			049B = Water Res Jwl 1
+00A0 = Old Bug Net		029E = DUMMY 63			049C = Ice Res Jewel 1
+00A1 = Bug Net			029F = A.Lagi Hardhorn		049D = ThunderRes Jwl 1
+00A2 = Mega Bug Net		02A0 = A.Lagi Dynamo		049E = Dragon Res Jwl 1
+00A3 = Fishing Harpoon		02A1 = Barioth Shell		049F = Heat Res Jewel 1
+00A4 = Mega Harpoon		02A2 = Barioth Carapace		04A0 = Cold Res Jewel 1
+00A5 = BBQ Spit			02A3 = Barioth Cortex		04A1 = Wind Res Jewel 1
+00A6 = Double BBQ Spit		02A4 = Barioth Pelt		04A2 = Wind Res Jewel 2
+00A7 = Whetstone		02A5 = Barioth Pelt+		04A3 = DUMMY 139
+00A8 = Binoculars		02A6 = Barioth Fur		04A4 = Gathering Jwl 1
+00A9 = Garbage			02A7 = Barioth Claw		04A5 = Spree Jewel 1
+00AA = Field Horn		02A8 = Barioth Claw+		04A6 = Blessing Jewel 1
+00AB = Health Horn		02A9 = Barioth Talon		04A7 = Fate Jewel 1
+00AC = Antidote Horn		02AA = Barioth Spike		04A8 = Fate Jewel 3
+00AD = Demon Horn		02AB = DUMMY 64			04A9 = DUMMY 140
+00AE = Armor Horn		02AC = Barioth Tail		04AA = Psychic Jewel 1
+00AF = Honey			02AD = Barioth Lash		04AB = Medicine Jewel 1
+00B0 = Herb			02AE = Amber Tusks		04AC = Medicine Jewel 2
+00B1 = Antidote Herb		02AF = Amber Tusks+		04AD = Professor Jewel 1
+00B2 = Fire Herb		02B0 = Hvy Amber Tusks		04AE = Factory Jewel 1
+00B3 = DUMMY 9			02B1 = S.Bari Carapace		04AF = Evasion Jewel 1
+00B4 = Ivy			02B2 = S.Barioth Cortex		04B0 = Evasion Jewel 2
+00B5 = Sleep Herb		02B3 = S.Barioth Pelt+		04B1 = Potential Jwl 1
+00B6 = Sap Plant		02B4 = S.Barioth Fur		04B2 = Potential Jwl 2
+00B7 = Felvine			02B5 = S.Barioth Claw+		04B3 = Enduring Jewel 1
+00B8 = Cactus Flower		02B6 = S.Barioth Talon		04B4 = Sprinter Jewel 1
+00B9 = Airweed			02B7 = S.Barioth Tail		04B5 = Sprinter Jewel 3
+00BA = Hot Pepper		02B8 = S.Barioth Lash		04B6 = Capacity Jewel 2
+00BB = DUMMY 10			02B9 = Indigo Tusks+		04B7 = Capacity Jewel 3
+00BC = Blue Mushroom		02BA = Hvy Indigo Tusks		04B8 = Sniper Jewel 1
+00BD = Nitroshroom		02BB = Rugged PLeura		04B9 = Gobbler Jewel 1
+00BE = Parashroom		02BC = Rugged PLeura+		04BA = Gobbler Jewel 3
+00BF = Toadstool		02BD = Diablos Shell		04BB = Carver Jewel 1
+00C0 = Exciteshroom		02BE = Diablos Carapace		04BC = Carver Jewel 3
+00C1 = DUMMY 11			02BF = Diablos Cortex		04BD = Footing Jewel 1
+00C2 = Dragon Toadstool		02C0 = Diablos Ridge		04BE = Tectonic Jewel 1
+00C3 = Bindshroom		02C1 = Diablos Ridge+		04BF = DUMMY 141
+00C4 = Paintberry		02C2 = Diablos Chine		04C0 = Jumping Jewel 1
+00C5 = Might Seed		02C3 = Diablos Tailcase		04C1 = DUMMY 142
+00C6 = Adamant Seed		02C4 = DUMMY 65			04C2 = Draw Jewel 1
+00C7 = Dragonfell Berry		02C5 = Diablos Fang		04C3 = Draw Jewel 2
+00C8 = Scatternut		02C6 = Twiested Horn		04C4 = Trapmaster Jwl 1
+00C9 = Needleberry		02C7 = Majestic Horn		04C5 = Physique Jewel 1
+00CA = DUMMY 12			02C8 = Stout Horn		04C6 = Physique Jewel 2
+00CB = Bomberry			02C9 = Diablos Marrow		04C7 = Capture Jewel 1
+00CC = DUMMY 13			02CA = Diablos Medulla		04C8 = Capture Jewel 3
+00CD = DUMMY 14			02CB = B.Diab Carapace		04C9 = Perception Jwl 1
+00CE = DUMMY 15			02CC = B.Diablos Cortex		04CA = Charger Jewel 1
+00CF = DUMMY 16			02CD = B.Diablos Ridge+		04CB = Charger Jewel 3
+00D0 = Nulberry			02CE = B.Diablos Chine		04CC = Fresh Air Jwl 1
+00D1 = Bumblepumpkin		02CF = DUMMY 66			04CD = Stopflow Jewel 1
+00D2 = Broken Shell		02D0 = DUMMY 67			04CE = Swimmer Jewel 1
+00D3 = Black Pearl		02D1 = Blackcurl Horn		04CF = Diver Jewel 1
+00D4 = Jumbo Pearl		02D2 = Blackcurl Horn+		04D0 = Gambit Jewel 1
+00D5 = Stone			02D3 = Uragaan Scale		04D1 = Gambit Jewel 3
+00D6 = Iron Ore			02D4 = Uragaan Scale+		04D2 = Resitor Jewel 1
+00D7 = Earth Crystal		02D5 = Uragaan Shard		04D3 = Release Jewel 2
+00D8 = Machalite Ore		02D6 = Uragaan Shell		04D4 = Catalyst Jewel 3
+00D9 = Dragonite Ore		02D7 = Uragaan Carapace		04D5 = Fortitude Jwl 1
+00DA = Pelagicite Ore		02D8 = Uragaan Cortex		04D6 = Fortitude Jwl 2
+00DB = DUMMY 17			02D9 = Uragaan Jaw		04D7 = Salvo Jewel 1
+00DC = DUMMY 18			02DA = Uragaan Jaw+		04D8 = Salvo Jewel 3
+00DD = DUMMY 19			02DB = Uragaan Scute		04D9 = Dungmaster Jwl 1
+00DE = Carbalite Ore		02DC = Uragaan Scute+		04DA = Torchlight Jwl 1
+00DF = Eltalite Ore		02DD = Uragaan Marrow		04DB = (No Mask)
+00E0 = Fucium Ore		02DE = Uragaan Ruby		04DC = BBQ With Mask
+00E1 = Meldspar Ore		02DF = Uragaan Pallium		04DD = Sharpen w/Mask
+00E2 = Bathycite Ore		02E0 = S.Uragaan Scale+		04DE = Return Via Mask
+00E3 = Lava Nugget		02E1 = S.Uragaan Shard		04DF = Slime S
+00E4 = Firestone		02E2 = S.Urag Carapace		04E0 = DUMMY 143
+00E5 = Firecell Stone		02E3 = S.Uragaan Cortex		04E1 = Flying Wyverns Vol 1
+00E6 = Allfire Stone		02E4 = S.Uragaan Maw		04E2 = Flying Wyverns Vol 2
+00E7 = Lightcrystal		02E5 = S.Uragaan Jaw+		04E3 = Flying Wyverns Vol 3
+00E8 = Isisium			02E6 = S.Uaraaan Scute		04E4 = Bird Wyverns Vol 1
+00E9 = DUMMY 20			02E7 = S.Uragaan Scute+		04E5 = Bird Wyverns Vol 2
+00EA = Gracium			02E8 = Uroktor Scale		04E6 = Brute Wyverns Vol 1
+00EB = Antiseptic Stone		02E9 = Uroktor Scale+		04E7 = Brute Wyverns Vol 2
+00EC = Ice Crystal		02EA = Supple Piel		04E8 = Brute Wyverns VOl 3
+00ED = Armor Stone		02EB = Agnaktor Scale		04E9 = Leviathans Vol 1
+00EE = Armor Sphere		02EC = DUMMY 68			04EA = Leviathans Vol 2
+00EF = Armor Sphere+		02ED = Agnaktor Shell		04EB = Leviathans Vol 3
+00F0 = Adv Armor Sphere		02EE = Agnk Carapace		04EC = Fanged Wyverns Vol 1
+00F1 = Hrd Armor Sphere		02EF = Agnaktor Hide		04ED = Fanged Wyverns Vol 2
+00F2 = Hvy Armor Sphere		02F0 = Agnaktor Hide+		04EE = Fanged Beasts
+00F3 = DUMMY 21			02F1 = Agnaktor Piel		04EF = Invalid Message
+00F4 = Tru Armor Sphere		02F2 = Agnaktor Claw		04F0 = Piscine Wyverns
+00F5 = Whetfish			02F3 = Agnaktor Claw+		04F1 = Elder Dragons Vol 1
+00F6 = Sushifish		02F4 = Agnaktor Talon		04F2 = Elder Dragons Vol 2
+00F7 = Sleepyfish		02F5 = Agnaktor Fin		04F3 = Elder Dragons Vol 3
+00F8 = Pin Tuna			02F6 = Agnaktor Fin+		04F4 = Lynians
+00F9 = Popfish			02F7 = Fine Agnak Fin		04F5 = Neopteron
+00FA = Scatterfish		02F8 = Agnaktor Beak		04F6 = Herbivores Vol 1
+00FB = Burst Arowana		02F9 = DUMMY 69			04F7 = Herbivores Vol 2
+00FC = Bomb Arowana		02FA = Agnaktor Tail		04F8 = Deviljho
+00FD = Glutton Tuna		02FB = DUMMY 70			04F9 = Brachydios
+00FE = Small Goldenfish		02FC = Scalding Pleura+		04FA = Dire Miralis
+00FF = Wanchovy			02FD = Scorching Pleura		04FB = Plesioth Vol 1
+0100 = DUMMY 22			02FE = G.Agnak Carapace		04FC = Plesioth Vol 2
+0101 = Blue Cutthroat		02FF = G.Agnak Cortex		04FD = Deadorant
+0102 = Humspun Conch		0300 = G.Agnak Hide+		04FE = Emperor Jopper
+0103 = DUMMY 23			0301 = G.Agnak Piel		04FF = Elder Dragonbone
+0104 = Insect Husk		0302 = G.Agnak Claw+		0500 = DUMMY 145
+0105 = Yambug			0303 = G.Agnak Talon		0501 = Purecrystak
+0106 = Bughopper		0304 = G.Agnak Fin+		0502 = Admant Orb
+0107 = DUMMY 215		0305 = Fine G.Agnak Fin		0503 = Lagiacrus Piel
+0108 = Stinkhopper		0306 = G.Agnak Beak		0504 = DUMMY 146
+0109 = Snakebee Larva		0307 = DUMMY 71			0505 = Nightmarish Maw
+010A = GodBug			0308 = G.Agnak Tail		0506 = DUMMY 147
+010B = Bitterbug		0309 = DUMMY 72			0507 = DUMMY 148
+010C = Flashbug			030A = Dewy PLeura+		0508 = DUMMY 149
+010D = Thunderbug		030B = Drenched Pleura		0509 = Slime Coating
+010E = Fulgurbug		030C = Ceadeus Scale		050A = DUMMY 150
+010F = Carpenterbug		030D = Ceadeus Hide		050B = Blossom Cricket
+0110 = Killer Beetle		030E = Ceadeus Fur		050C = L.Narg Tailspear
+0111 = Hercudrome		030F = Ceadues Tail		050D = DUMMY 151
+0112 = DUMMY 24			0310 = Crooked Horn		050E = G.Narg Tailspear
+0113 = King Scarab		0311 = Luminous Organ		050F = DUMMY 152
+0114 = Rare Scarab		0312 = Deep Dragongem		0510 = Agnaktor Cortex
+0115 = DUMMY 25			0313 = G.Ceadeus Shard		0511 = Revolting Piel
+0116 = Flutterfly		0314 = G.Ceudeus Coat		0512 = Cryo Sac
+0117 = DUMMY 26			0315 = G.Ceadeus Fur		0513 = Flood Sac
+0118 = Bomb Sac			0316 = DUMMY 73			0514 = Monster Essence
+0119 = Screamer			0317 = Crooked Hardhorn		0515 = DUMMY 153
+011A = Poison Sac		0318 = DUMMY 74			0516 = Massive Bone
+011B = Toxin Sac		0319 = Dark Dragongem		0517 = DUMMY 154
+011C = DUMMY 27			031A = DUMMY 75			0518 = Prized Pelt
+011D = Paralysis		031B = Mohran Scale+		0519 = DUMMY 155
+011E = Omniplegia Sac		031C = DUMMY 76			051A = DUMMY 156
+011F = Sleep Sac		031D = Mohran Carapace		051B = Speartuna
+0120 = Coma Sac			031E = DUMMY 77			051C = Nargacuga Pelt+
+0121 = Flame Sac		031F = Mohran Brace+		051D = Narga Razor
+0122 = Inferno Sac		0320 = DUMMY 209		051E = VE Ticket
+0123 = Conflagrant Saac		0321 = Sturdy Fang+		051F = VE Deluxe Ticket
+0124 = Aqua Sac			0322 = Earth Dragongem		0520 = VE Bronze Ticket
+0125 = Torrent Sac		0323 = DUMMY 78			0521 = VE Sliver Ticket
+0126 = DUMMY 217		0324 = H.Jhen Shard		0522 = VE Golden Ticket
+0127 = Thunder Sac		0325 = DUMMY 79			0523 = VE Cosmic Ticket
+0128 = Lightning Sac		0326 = H.Jhen Rockskin		0524 = DUMMY 157
+0129 = Frost Sac		0327 = DUMMY 80			0525 = DUMMY 158
+012A = Freezer Sac		0328 = H.Jhen Allbrace		0526 = Maiden Butterfly
+012B = Dash Extract		0329 = DUMMY 81			0527 = DUMMY 159
+012C = Pale Extract		032A = Deific Fang		0528 = DUMMY 160
+012D = Monster Bone S		032B = Earth Drgnsphire		0529 = DUMMY 161
+012E = Monster Bone M		032C = Deviljho Scale		052A = DUMMY 162
+012F = Monster Bone L		032D = Deviljho Shard		052B = DUMMY 163
+0130 = Mystery Bone		032E = Deviljho Hide		052C = Chum-Chum Ticket
+0131 = Unknown Skull		032F = Deviljho Coat		052D = DUMMY 164
+0132 = Bone			0330 = Deviljho Fang		052E = Lagia Hardhorn
+0133 = Avian Stoutbone		0331 = Vile Fang		052F = DUMMY 165
+0134 = DUMMY 218		0332 = Deviljho Talon		0530 = DUMMY 166
+0135 = Monster Bone+		0333 = Deviljho Ripper		0531 = DUMMY 167
+0136 = Monster Keebone		0334 = Deviljho Scalp		0532 = Heftcorn
+0137 = Monster Hardbone		0335 = DUMMY 82			0533 = DUMMY 210
+0138 = Monster Slogbone		0336 = Deviljho Tail		0534 = DUMMY 212
+0139 = Avian Finebone		0337 = Deviljho Flail		0535 = Bullfango Tusk
+013A = Jumbo Bone		0338 = Deviljho Saliva		0536 = DUMMY 168
+013B = Stoutbone		0339 = Black Blood		0537 = DUMMY 169
+013C = Dragonbone Relic		033A = Deviljho Gem		0538 = DUMMY 170
+013D = Wyvern Fang		033B = Develjho Crook		0539 = Butterfly Beetle
+013E = Wyvern Claw		033C = Alatreon Scute		053A = DUMMY 171
+013F = Wyvern Stone		033D = Alatreon Pallium		053B = DUMMY 172
+0140 = Lrg Wyvern Stone		033E = Alatreon Plate		053C = Diablos Hardtail
+0141 = Bird Wyvern Gem		033F = Alatreon Mantel		053D = Barroth Lash
+0142 = Fey Wyvern Gem		0340 = Alatreon Talon		053E = DUMMY 173
+0143 = ElderDragonBlood		0341 = Alatreon Ripper		053F = DUMMY 174
+0144 = DUMMY 28			0342 = Alatreon Webbing		0540 = DUMMY 175
+0145 = Azure Dragongem		0343 = Aatreo Direwing		0541 = Scalding PLeura
+0146 = Azure Drgnsphire		0344 = Alatreon Tail		0542 = DUMMY 176
+0147 = Beautiful Scale		0345 = Alatreo Diretail		0543 = Crested Crown
+0148 = Shining Starfish		0346 = Brkn Skypiercer		0544 = Ryal Crest
+0149 = Armorfish Morsel		0347 = DUMMY 83			0545 = Realmless Crown
+014A = Fine pelt		0348 = Skypiercer		0546 = Giant Fossil
+014B = Power Paddle		0349 = Skyswayer		0547 = DUMMY 177
+014C = Curved Fang		034A = Arzuros Pelt		0548 = R.Ludroth Lash
+014D = Dragonbone Piece		034B = Arzuros Pelt+		0549 = Mohran Shard
+014E = Abalone Piece		034C = DUMMY 84			054A = Mohran Rockskin
+014F = Fossil Piece		034D = Azuros Shell		054B = Mohran Allbrace
+0150 = Stunning Quill		034E = Arzuros Carapace		054C = Rathalos Wing
+0151 = Saturnian		034F = Arzuros Cortex		054D = Pesioth Webbing
+0152 = Mystic Narwhal		0350 = Arzuros Brace		054E = Hrd Ples Webbing
+0153 = Perfect Paddle		0351 = Arzuros Brace+		054F = Fish
+0154 = Moonlight Fang		0352 = Arzuros Allbrace		0550 = DUMMY 178
+0155 = Glittering Scale		0353 = Lagombi Pelt		0551 = DUMMY 179
+0156 = Gaint Skull		0354 = Lagombi Pelt+		0552 = Small Golden Egg
+0157 = Atlantis Crab		0355 = Lagombi Fur		0553 = Bronze Coin
+0158 = Queen Needle		0356 = Lagombi Ear		0554 = Silver Coin
+0159 = Ancient Skin Oil		0357 = Lagombi Ear+		0555 = Gold Coin
+015A = Flamboyant Quill		0358 = Lagombi Auricle		0556 = Sparkiy Fragment
+015B = Eldest Saturnian		0359 = Lagom Plastron		0557 = Plesioth Head
+015C = Queen's Spirit		035A = Lagom Plastron+		0558 = Uber Plesio Head
+015D = Vermillion Scale		035B = DUMMY 85			0559 = Beast Coin
+015E = Sea-King's Scale		035C = Lagombi Claw		055A = Flying Coin
+015F = Old Egg			035D = Lagombi Claw+		055B = Piscine Coin
+0160 = Saturnian Trap		035E = DUMMY 86			055C = Brute Coin
+0161 = BugMaker! Pro		035F = Volvidon Shell		055D = Port Gal (Red)
+0162 = Funky Pheromones		0360 = Voli Carapace		055E = Port Gal (Blue)
+0163 = Shroom Germ		0361 = Volvidon Cortex		055F = Port Gal (Green)
+0164 = Shroom Germ+		0362 = Volvidon Claw		0560 = Port Gal (White)
+0165 = Bizzy Bees		0363 = Volvidon Claw+		0561 = Slickaxe
+0166 = Fish Finder		0364 = Volvidon Talon		0562 = Mooncatcher Fang
+0167 = Treasure Tracker		0365 = Volvi Rickrack		0563 = Glossy Scale
+0168 = Spare Spear		0366 = DUMMY 87			0564 = DUMMY 180
+0169 = Pittance Fang		0367 = Nibelsnarf Shell		0565 = DUMMY 181
+016A = Fortune Fang		0368 = Nibel Carapace		0566 = DUMMY 182
+016B = Gold Needle		0369 = Nibel Cortex		0567 = DUMMY 183
+016C = Wyverngold		036A = Nibelsnarf Hide		0568 = DUMMY 184
+016D = Pirate Booty		036B = Nibelsnarf Hide+		0569 = DUMMY 185
+016E = Steel Egg		036C = Nibelsnarf Piel		056A = DUMMY 186
+016F = Silver Egg		036D = Nibelsnarf Claw		056B = DUMMY 187
+0170 = Golden Egg		036E = Nibelsnarf Claw+		056C = DUMMY 188
+0171 = Kelbi Horn Objet		036F = Nibelsnarf Talon		056D = DUMMY 189
+0172 = Twstd Horn Objet		0370 = Nibelsnarf Scalp		056E = DUMMY 190
+0173 = MohranFang Objet		0371 = DUMMY 88			056F = DUMMY 191
+0174 = Poogie			0372 = Vivid Fluid		0570 = Thick Skull
+0175 = Eggie Poogie		0373 = Brilliant Fluid		0571 = Sarvory Bear Paw
+0176 = Rath Poogie		0374 = Dazzling Fluid		0572 = Peco Pipes
+0177 = Sandstone Plant		0375 = DUMMY 89			0573 = Billowy Mane
+0178 = Marshland Plant		0376 = Zinogre Carapace		0574 = Volvidon Tongue
+0179 = Snowflake Plant		0377 = Zinofre Cortex		0575 = Quality Mud Pack
+017A = Prismshroom Lamp		0378 = DUMMY 90			0576 = DUMMY 192
+017B = Qurupeco Lamp		0379 = Zinogre Shocker+		0577 = DUMMY 193
+017C = Sirensea Lamp		037A = Zin Electrofur+		0578 = Rathian Loin
+017D = Oceanic Fountain		037B = DUMMY 91			0579 = Tender Liver
+017E = Bubbly Fountain		037C = Zinogre Horn+		057A = P.Rathian Loin
+017F = Magma Fountain		037D = Zinogre Hardhorn		057B = Supersized Scale
+0180 = Iron Figure		037E = DUMMY 92			057C = Rathalos Ribs
+0181 = Machalite Figure		037F = Zinogre Claw+		057D = Prime Plesioth
+0182 = Dragonite Figure		0380 = Zingore Talon		057E = Diablos Heart
+0183 = Model Sandskiff		0381 = Zinogre Tail		057F = Bag of Zs
+0184 = Model Airship		0382 = Zinogre Lash		0580 = Large Obsidian
+0185 = Model Poogieship		0383 = DUMMY 94			0581 = Duram Truffle
+0186 = Guildie (Red)		0384 = Zin Electrofur		0582 = DUMMY 194
+0187 = Guildie (Green)		0385 = Zin D-Shocker		0583 = Zinogre Head
+0188 = Guildie (Blue)		0386 = DUMMY 208		0584 = DUMMY 195
+0189 = Great Poogi		0387 = Zinogre Jasper		0585 = Nargacuga Eye
+018A = Incomplete Crown		0388 = Zin Skymerald		0586 = Celestial Scale
+018B = Crown's Gemstone		0389 = S.Zin Cortex		0587 = Alabaster Scale
+018C = Dazzling Crown		038A = S.Zin Dragonhair		0588 = Worldeater Belly
+018D = Prize Gold Sword		038B = S.zin Hardhorn		0589 = DUMMY 196
+018E = Golden Medallion		038C = S.Zinogre Talon		058A = DUMMY 197
+018F = Kelbi Horn		038D = S.Zinogre Lash		058B = DUMMY 198
+0190 = Blue Kelbi Horn		038E = S.Zin Dragonshell	058C = DUMMY 199
+0191 = Warm Pelt		038F = S.Zin Skymerald		058D = DUMMY 200
+0192 = High-qualty Pelt		0390 = Nargacuga Scale+		058E = DUMMY 201
+0193 = Gargwa Feather		0391 = Nargacuga Shard		058F = DUMMY 202
+0194 = DUMMY 29			0392 = Nargacuga Mantel		0590 = DUMMY 203
+0195 = DUMMY 30			0393 = DUMMY 95			0591 = DUMMY 204
+0196 = Anteka Antler		0394 = Nargacuga Fur		0592 = DUMMY 205
+0197 = DUMMY 31			0395 = Nargacuga Tail		0593 = Exquisite Meat
+0198 = Bnahabra Shell		0396 = Nargacuga Lash		0594 = DUMMY
+0199 = DUMMY 32			0397 = Narga Tailspike		0595 = Top Secret Formula
+019A = Bnaha Carapace		0398 = Narga Tailspear		0596 = Flashbolt Diploma
+019B = Bnahabra Wing		0399 = DUMMY 96			0597 = DUMMY 207
+019C = DUMMY 33			039A = Narga Razor+		0598 = DUMMY
+019D = Bnahabra Cutwing		039B = Nargacuga Fang+		0599 = Captain's IOU
+019E = Bnahabra Spine		039C = Hvy Narga Fang		059A = Hades's Skull
+019F = Altaroth Jaw		039D = Narga Medulla		059B = DUMMY
+01A0 = DUMMY 34			039E = DUMMY 97			059C = Crown of Glory
+01A1 = Altaroth Stomach		039F = G.Narga Shard		059D = DUMMY
+01A2 = Prized Stomach		03A0 = DUMMY 98			059E = DUMMY
+01A3 = Quality Sac		03A1 = G.Narga Dapples		059F = Medal Voucher G
+01A4 = Bullfango Pelt		03A2 = DUMMY 99			05A0 = Far East Sword
+01A5 = DUMMY 35			03A3 = G.Narga Razor+		05A1 = DUMMY
+01A6 = Bullfango Head		03A4 = DUMMY 100		05A2 = DUMMY
+01A7 = Monster Fluid		03A5 = Hvy G.Narga Fang		05A3 = Miniature Ticket
+01A8 = Monster Broth		03A6 = L.Narga Shard		05A4 = Fierce Soul
+01A9 = Rhenoplos Shell		03A7 = L.Narga Dapples		05A5 = DUMMY 220
+01AA = Rhenoplos Bone		03A8 = L.Narga Razor		05A6 = Flying Wyverns Vol 4
+01AB = Rhenoplos Scalp		03A9 = Hvy L.Narga Fang		05A7 = Flying Wyverns Vol 5
+01AC = DUMMY 36			03AA = Duramboros Shell		05A8 = Def Lock Jewel 1
+01AD = Rheno Carapace		03AB = Duram Carapace		05A9 = Sterile Jewel 1
+01AE = DUMMY 219		03AC = Duram Cortex		05AA = Aseptic Juwel 1
+01AF = Slagtoth Hide+		03AD = Duram Mossplate		05AB = Blaze Jewel 1
+01B0 = DUMMY 37			03AE = Hard Mossplate		05AC = Blaze Jewel 2
+01B1 = Big Fin			03AF = Heavy Mossplate		05AD = Stream Jewel 1
+01B2 = DUMMY 38			03B0 = Duramboros Hump		05AE = Stream Jewel 2
+01B3 = Quality Fin		03B1 = Marbeld Hump		05AF = Bolt Jewel 1
+01B4 = Giant Fin		03B2 = Duram Tailcase		05B0 = Bolt Jewel 2
+01B5 = Sharpend Fang		03B3 = Duram Tailcase+		05B1 = Frost Jewel 1
+01B6 = Velvety Hide		03B4 = Duram Hardtail		05B2 = Frost Jewel 2
+01B7 = Sharqskin		03B5 = Duramboros Horn		05B3 = Dragon Jewel 1
+01B8 = Jaggi Scale		03B6 = Duramboros Horn+		05B4 = Dragon Jewel 2
+01B9 = Jaggi Scale+		03B7 = Duram Hardhorn		05B5 = Tenderizer Jwl 1
+01BA = DUMMY 39			03B8 = Duram Tailbone		05B6 = Tenderizer Jwl 3
+01BB = Jaggi Hide		03B9 = Duram Sacrum		05B7 = Destroyer Jwl 1
+01BC = DUMMY 40			03BA = Durambolite		05B8 = Destroyer Jwl 3
+01BD = DUMMY 41			03BB = R.Duram Shell		05B9 = Throttle Jewel 1
+01BE = Bird Wyvern Fang		03BC = R.Duram Plate		05BA = Throttle Jewel 2
+01BF = G.Jaggi Hide		03BD = DUMMY 101		05BB = KO Jewel 1
+01C0 = G.Jaggi Hide+		03BE = R.Duram Hardtail		05BC = Drain Jewel 1
+01C1 = Great Jaggi Piel		03BF = DUMMY 102		05BD = Drain Jewel 2
+01C2 = G.Jaggi Claw		03C0 = DUMMY 103		05BE = Sonorous Jewel 1
+01C3 = G.Jaggi Claw+		03C1 = Lrg Lobstershell		05BF = Artillery Jwl 1
+01C4 = DUMMY 42			03C2 = DUMMY 105		05C0 = Resistor Jewel 3
+01C5 = King's Frill		03C3 = Plesioth Fang+		05C1 = Nul-Fire Jewel 1
+01C6 = Imperial Frill		03C4 = Hvy Plesio Fang		05C2 = Nul-Water Jwl 1
+01C7 = Great Jaggi Head		03C5 = Plesioth Scale+		05C3 = Nul-Thundr Jwl 1
+01C8 = DUMMY 43			03C6 = Plesioth Shard		05C4 = Nul-Ice Jewel 1
+01C9 = Baggi Hide		03C7 = Plesioth Fin+		05C5 = Nul-Dragon Jwl 1
+01CA = Baggi Scale		03C8 = Fine Plesio Fin		05C6 = Sheath Jewel 1
+01CB = Baggi Scale+		03C9 = DUMMY 105		05C7 = Steath Jewel 2
+01CC = DUMMY 44			03CA = G.Plesio Hard		05C8 = Refresh Jewel 1
+01CD = G.Baggi Hide		03CB = DUMMY 107		05C9 = Refresh Jewel 2
+01CE = G.Baggi Hide+		03CC = Fine G.lesi Fin		05CA = Ranger Jewel 1
+01CF = Great Baggi Piel		03CD = Brach Carapace		05CB = SlicePlus Jwl 1
+01D0 = G.Baggi Claw		03CE = Brach Cortex		05CC = Paracoat Jewel 1
+01D1 = G.Baggi Claw+		03CF = Brach Ebonshell		05CD = Paracoat Jewel 2
+01D2 = DUMMY 45			03D0 = Brach Ebenshell+		05CE = Sleepcoat Jwl 1
+01D3 = King' Crest		03D1 = DUMMY 108		05CF = Poisoncoat Jwl 1
+01D4 = Imperial Crest		03D2 = DUMMY 109		05D0 = Powercoat Jwl 1
+01D5 = Wroggi Scale		03D3 = Brach Scalp		05D1 = Powercoat Jwl 2
+01D6 = Wroggi Scale+		03D4 = Brach Scalp+		05D2 = Rangecoat Jwl 1
+01D7 = DUMMY 46			03D5 = Mystery Slime		05D3 = Draincoat Jwl 1
+01D8 = Wroggi Hide		03D6 = Glowing Slime		05D4 = Stopflow Jewel 2
+01D9 = Wroggi Fang		03D7 = Brach Pouder		05D5 = Guts Jewel 1
+01DA = G.Wroggi Hide		03D8 = Brach Pouder+		05D6 = Guts Jewel 2
+01DB = G.Wroggi Piel		03D9 = Brachydios Tail		05D7 = Meateater Jwl 1
+01DC = G.Wroggi Hide+		03DA = DUMMY 110		05D8 = Meatlover Jwl 1
+01DD = G.Wroggi Brace		03DB = Brachydios Gem		05D9 = Slider Jewel 1
+01DE = DUMMY 47			03DC = Brach Pallium		05DA = Glider Jewel 1
+01DF = G.Wroggi Brace+		03DD = Miralis Scale		05DB = Honeybee Jewel 1
+01E0 = King's Beak		03DE = Miralis Fireback		05DC = Queenbee Jewel 1
+01E1 = Imperial Beak		03DF = Mirelis Fireclaw		05DD = Biology Jewel 1
+01E2 = Qurupeco Sacle		03E0 = DUMMY 111		05DE = Microbio Jewel 1
+01E3 = Qurupeco Scale+		03E1 = DUMMY 112		05DF = Spirit Jewel 1
+01E4 = Qurupeco Shard		03E2 = Miralis Evil Eye		05E0 = Spirit Jewel 2
+01E5 = Qurupeco Feather		03E3 = DUMMY 113		05E1 = Flawless Jewel 1
+01E6 = Lustrous Feather		03E4 = Miralis Hellwing		05E2 = Flawless Jewel 2
+01E7 = Qurupeco Wing		03E5 = DUMMY 114		05E3 = Steady Jewel 1
+01E8 = Peco Fellwing		03E6 = DUMMY 115		05E4 = Steady Jewel 3
+01E9 = Vivid Feather		03E7 = Miralis Smelter		05E5 = Fish Jewel 1
+01EA = Strange Beak		03E8 = Immortal Heart		05E6 = Fish Jewel 2
+01EB = Wonderful Beak		03E9 = DUMMY 116		05E7 = Player Jewel 1
+01EC = Alluring Beak		03EA = Gushing Magma		05E8 = Morale Jewel 1
+01ED = Flintstone		03EB = Dire Dragongem		05E9 = Leader Jewel 1
+01EE = Quality Flint		03EC = Rustshard		05EA = Leader Jewel 2
+01EF = C.Peco Scale+		03ED = Ancient Shard		05EB = Dust of Life
+01F0 = C.Peco Shard		03EE = Rusted Fragment		05EC = KO Jewel 2
+01F1 = C.Peco Wing		03EF = Large Fragment		05ED = Diablos Hardhorn
+01F2 = C.Peco Fellwing		03F0 = Slender Fragment		05EE = Ghostly Quartz
+01F3 = Voltstone		03F1 = Long Fragment		05EF = Crushing Fang
+01F4 = High Voltstone		03F2 = Map			05F0 = Cloudy Moonshard
+01F5 = Hydro Hide		03F3 = First-aid Med		05F1 = Bulky Pelt
+01F6 = Hydro Hide+		03F4 = Ration			05F2 = Excellent Fang
+01F7 = DUMMY 48			03F5 = DUMMY			05F3 = Fish with Mask
+01F8 = Immature Songe		03F6 = Mini Whetstone		05F4 = Gloamgrass Bud
+01F9 = Quality Sponge		03F7 = EZ Shock Trap		05F5 = Platinum Needle
+01FA = Spongy Hide		03F8 = EZ Flash Bomb		05F6 = Goldmine Fang
+01FB = Spongy Hide+		03F9 = EZ Sonic Bomb		05F7 = Wyverngold Lore
+01FC = Spongy Piel		03FA = EZ Max Potion		05F8 = Charmer Jewel 1
+01FD = R.Ludroth Scal		03FB = EZ Pitfall Trap		05F9 = Dracophage Bug
+01FE = R.Ludroth Scal+		03FC = Mini Oxy Supply		05FA = Tanzia Chips
+								05FB = SlimePlus Jwl 1
+								05FC = Slimecoat Jwl 1
+
+========================================================================================
+########################################################################################
+========================================================================================
+Equipment ID's:
+
+01 = torso / chest
+02 = Bracers / Hands
+03 = torso / hip
+04 = shoes / pants
+05 = helmet / head
+06 = Amulets / Talisman
+07 = Great sword
+08 = sword and shield
+09 = hammer
+0A = lance
+0B = Heavy crossbow
+0C = (nothing)
+0D = Light Crossbow
+0E = katana / long sword
+0F = Morphaxe
+10 = gun lance
+11 = bow
+12 = double blades
+13 = hunting horn
+
+========================================================================================
+########################################################################################
+========================================================================================
+Talisman Skill ID's:
+
+01 = trunk reinforcement 		20 = evade dist			40 = standard addition 		60 = carving
+02 = Poison				21 = Immersion 			41 = PiercSzufüg 		61 = Tranquilzer
+03 = paralysis 				22 = sense of sensation 	42 = painfulness 		62 = perception
+04 = Sleep 				23 = Block 			43 = CragSzufüg 		63 = Vision
+05 = Stunning 				24 = Block high 		44 = Scattering 		64 = transporter
+06 = snow / mud 			25 = autoblock  		45 = cutaway 			65 = ranger
+07 = Antiseptic 			26 = Status <--- 		46 = Slime addition 		66 = Anti-thief
+08 = stopwatch 				27 = fire attack 		47 = poison B + 		67 = speed setup
+09 = Dungmaster 			28 = Water attack 		48 = Lähm B + 			68 = Flame aura.
+0A = biology 				29 = thunder attack 		49 = sleep B + 			69 = oxygen
+0B = attack <--- 			2A = ice attack 		4A = force B + 			6A = current res
+0C = Defense 				2B = Kite Attack 		4B = Melee B + 			6B = Swimming
+0D = Health 				2C = Element <--- 		4C = Fatigue. B + 		6C = Sea Legs
+0E = Recovery. 				2D = fire control 		4D = mucus B + 			6D = potential
+0F = Protection 			2E = Water Resistance 		4E = Maestro 			6E = Survive
+10 = Displacement 			2F = Thunderstorm 		4F = Artillery 			6F = Gloves Off
+11 = fast load 				30 = Ice Defense 		50 = BombStarch. 		70 = Spirit <---
+12 = Expert <--- 			31 = Dragon Defense 		51 = Recovery Level 		71 = Unscathed
+13 = knocker 				32 = sharpness <--- 		52 = large area 		72 = free element <---
+14 = Destroyer 				33 = Handicraft <--- 		53 = Eternal Power 		73 = Fire Protection
+15 = Knock-out 				34 = Fencing <--- 		54 = Hunger 			74 = Status Res
+16 = Ausd.Entz. 			35 = Sharper <--- 		55 = Feasting 			75 = Unshakable
+17 = constitution 			36 = criticism 			56 = food 			76 = Guts
+18 = hearing <--- 			37 = sentence 			57 = meatfr. 			77 = Edgemaster
+19 = Wind deflector 			38 = Lateral swing	 	58 = Combi rate 		78 = Steadyhand
+1A = quiver defense 			39 = capacity 			59 = combo plus	 		79 = Fury
+1B = heat protection 			3A = fast fire 			5A = gathering 			7A = team game.
+1C = Cold War 				3B = Return 			5B = speed gather 		7B = Team leader
+1D = endurance 				3C = precision			5C = whim 			7C = card
+1E = AusdErholg 			3D = NormalShoch 		5D = Honey 			7D = Fishing
+1F = Dodge <--- 			3E = PiercShoch 		5E = charmer	 		7E = Grilling
+					3F = SchtShoch 			5F = fate 			7F = (Nothing)
+
+========================================================================================
+########################################################################################
+========================================================================================
+Jewel ID's:
+
+38 = attack +5
+3E = hearing +4 
+
+========================================================================================
+########################################################################################
+========================================================================================
+Food Skill ID's:
+
+0005 = Pyro
+0012 = Heroic
+001E = Temper
+002B = Bombardier
+0032 = Polisher
+0034 = Gamechanger
+
+========================================================================================
+########################################################################################
+========================================================================================
+Armor ID's:
+
+002E = Uragaan Helm
+002F = Uragaan Cap
+
+========================================================================================
+########################################################################################
+========================================================================================
+Weapon ID's:
+
+--------------------------------------------
+Great Sword:
+--------------------------------------------
+Long Sword:
+--------------------------------------------
+Sword & Shield:
+--------------------------------------------
+Double Blade:
+003E = Eclipse Slicer
+003F = Alkaid's Asterism
+
+--------------------------------------------
+Hunting Horn:
+--------------------------------------------
+Bow:
+
+========================================================================================
+########################################################################################
+========================================================================================
+
